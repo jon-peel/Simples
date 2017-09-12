@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <Version>0.0.01</Version>
+    <Authors>Jonathan Peel</Authors>
+    <Company />
+    <Description>A .Net library with simple, hopefully useful, helpers.</Description>
+    <Copyright>2017 Jonathan Peel</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Thorocaine/Simples/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Thorocaine/Simples</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Thorocaine/Simples</RepositoryUrl>
+    <PackageTags>.net</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+</Project>
