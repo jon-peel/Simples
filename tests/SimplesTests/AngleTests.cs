@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SimplesTests
 {
-    public class DegreeTests
+    public class AngleTests
     {
         const decimal DefaultDecimalValue = 12.111M;
         const double DefaultFloatValue = 12.111;
@@ -11,21 +11,21 @@ namespace SimplesTests
         [Fact]
         public void Degree_FromDecimal()
         {
-            Degree deg = DefaultDecimalValue;
+            Angle deg = DefaultDecimalValue;
             Assert.NotNull(deg);
         }
 
         [Fact]
         public void Degree_FromFloat()
         {
-            Degree deg = DefaultFloatValue;
+            Angle deg = DefaultFloatValue;
             Assert.NotNull(deg);
         }
 
         [Fact]
         public void Float_FromDegree()
         {
-            Degree deg = DefaultFloatValue;
+            Angle deg = DefaultFloatValue;
             double val = deg;
             Assert.Equal(DefaultFloatValue, val);
         }
@@ -33,7 +33,7 @@ namespace SimplesTests
         [Fact]
         public void Decimal_FromDegree()
         {
-            Degree deg = DefaultFloatValue;
+            Angle deg = DefaultFloatValue;
             decimal val = deg;
             Assert.Equal(DefaultDecimalValue, val);
         }
@@ -46,7 +46,23 @@ namespace SimplesTests
         [InlineData(180.445522, 180, 26, 43.8792)]
         public void Degrees_Minute_Second(decimal value, int expectedDegrees, int expectedMinutes, decimal expectedSeconds)
         {
-            Degree deg = value;
+            Angle deg = value;
+            Assert.False(deg.Negative);
+            Assert.Equal(expectedDegrees, deg.Degrees);
+            Assert.Equal(expectedMinutes, deg.Minutes);
+            Assert.Equal(expectedSeconds, deg.Seconds, 4);
+        }
+
+        [Theory]
+        [InlineData(-012.111000, 012, 06, 39.6000)]
+        [InlineData(-045.123877, 045, 07, 25.9572)]
+        [InlineData(-099.876544, 099, 52, 35.5584)]
+        [InlineData(-100.123832, 100, 07, 25.7952)]
+        [InlineData(-180.445522, 180, 26, 43.8792)]
+        public void Degrees_Negative_Minute_Second(decimal value, int expectedDegrees, int expectedMinutes, decimal expectedSeconds)
+        {
+            Angle deg = value;
+            Assert.True(deg.Negative);
             Assert.Equal(expectedDegrees, deg.Degrees);
             Assert.Equal(expectedMinutes, deg.Minutes);
             Assert.Equal(expectedSeconds, deg.Seconds, 4);
@@ -60,7 +76,7 @@ namespace SimplesTests
         [InlineData(180.445522, "180\u00B0 26\u2032 43,88\u2033")]
         public void Degrees_String(decimal value, string expectedString)
         {
-            Degree deg = value;
+            Angle deg = value;
             Assert.Equal(expectedString, deg.ToString());
             Assert.Equal(expectedString, deg);
         }
