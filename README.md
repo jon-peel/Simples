@@ -1,2 +1,2 @@
 # Simples
-A library with simple, hopefully useful, helpers
+A c# library with simple, hopefully useful, helpers
