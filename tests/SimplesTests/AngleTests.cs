@@ -11,21 +11,21 @@ namespace SimplesTests
         [Fact]
         public void Degree_FromDecimal()
         {
-            Angle deg = DefaultDecimalValue;
+            Degree deg = DefaultDecimalValue;
             Assert.NotNull(deg);
         }
 
         [Fact]
         public void Degree_FromFloat()
         {
-            Angle deg = DefaultFloatValue;
+            Degree deg = DefaultFloatValue;
             Assert.NotNull(deg);
         }
 
         [Fact]
         public void Float_FromDegree()
         {
-            Angle deg = DefaultFloatValue;
+            Degree deg = DefaultFloatValue;
             double val = deg;
             Assert.Equal(DefaultFloatValue, val);
         }
@@ -33,7 +33,7 @@ namespace SimplesTests
         [Fact]
         public void Decimal_FromDegree()
         {
-            Angle deg = DefaultFloatValue;
+            Degree deg = DefaultFloatValue;
             decimal val = deg;
             Assert.Equal(DefaultDecimalValue, val);
         }
@@ -46,7 +46,7 @@ namespace SimplesTests
         [InlineData(180.445522, 180, 26, 43.8792)]
         public void Degrees_Minute_Second(decimal value, int expectedDegrees, int expectedMinutes, decimal expectedSeconds)
         {
-            Angle deg = value;
+            Degree deg = value;
             Assert.False(deg.Negative);
             Assert.Equal(expectedDegrees, deg.Degrees);
             Assert.Equal(expectedMinutes, deg.Minutes);
@@ -61,7 +61,7 @@ namespace SimplesTests
         [InlineData(-180.445522, 180, 26, 43.8792)]
         public void Degrees_Negative_Minute_Second(decimal value, int expectedDegrees, int expectedMinutes, decimal expectedSeconds)
         {
-            Angle deg = value;
+            Degree deg = value;
             Assert.True(deg.Negative);
             Assert.Equal(expectedDegrees, deg.Degrees);
             Assert.Equal(expectedMinutes, deg.Minutes);
@@ -76,7 +76,7 @@ namespace SimplesTests
         [InlineData(180.445522, "180\u00B0 26\u2032 43,88\u2033")]
         public void Degrees_String(decimal value, string expectedString)
         {
-            Angle deg = value;
+            Degree deg = value;
             Assert.Equal(expectedString, deg.ToString());
             Assert.Equal(expectedString, deg);
         }
