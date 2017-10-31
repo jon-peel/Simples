@@ -21,8 +21,8 @@
 
         public static implicit operator Degree(double from) => new Degree(from);
         public static implicit operator Degree(decimal from) => new Degree(from);
-        public static implicit operator decimal(Degree from) => from.value;
-        public static implicit operator double(Degree from) => (double)from.value;
+        public static implicit operator decimal(Degree from) => from.Negative ? 0 - from.value : from.value;
+        public static implicit operator double(Degree from) => from.Negative ? 0D - (double)from.value : (double)from.value;
         public static implicit operator string(Degree from) => from.ToString();
     }
 }

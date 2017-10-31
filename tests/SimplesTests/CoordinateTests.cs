@@ -13,5 +13,15 @@ namespace SimplesTests
             var result = coordinate.ToString();
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(26.2041, 28.0473)]
+        [InlineData(-26.2041, -28.0473)]
+        public void Coordinate_Long_Lat(decimal longitude, decimal latitude)
+        {
+            Coordinate coordinate = (longitude, latitude);
+            Assert.Equal<decimal>(longitude, coordinate.Longitude);
+            Assert.Equal<decimal>(latitude, coordinate.Latitude);
+        }
     }
 }

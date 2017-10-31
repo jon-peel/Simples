@@ -2,17 +2,17 @@
 {
     public class Coordinate
     {
-        Degree longitude;
-        Degree latitude;
+        public Degree Longitude { get; }
+        public Degree Latitude { get; }
 
         Coordinate(Degree longitude, Degree latitude)
         {
-            this.latitude = latitude;
-            this.longitude = longitude;
+            Latitude = latitude;
+            Longitude = longitude;
         }
 
         public override string ToString()
-        => $"{longitude} {(longitude.Negative ? "S" : "N")}, {latitude} {(latitude.Negative ? "W" : "E")}";
+        => $"{Longitude} {(Longitude.Negative ? "S" : "N")}, {Latitude} {(Latitude.Negative ? "W" : "E")}";
 
         public static implicit operator Coordinate((Degree longitude, Degree latitude) temp) => new Coordinate(temp.longitude, temp.latitude);
         public static implicit operator string(Coordinate coordinate) => coordinate.ToString();
