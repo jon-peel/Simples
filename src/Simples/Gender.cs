@@ -2,7 +2,7 @@
 
 namespace Simples
 {
-    public class Gender : IEquatable<Gender>
+    public readonly struct Gender : IEquatable<Gender>
     {
         readonly bool male;
         Gender(bool isMale) => male = isMale;
