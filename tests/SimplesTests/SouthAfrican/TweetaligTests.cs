@@ -10,7 +10,7 @@ namespace SimplesTests.SouthAfrican
         [MemberData(nameof(GetTestData))]
         public void Parse_HasEnglish(string full, string eng, string afr)
         {
-            var result = Tweetalig.Parse(full);
+            Tweetalig result = full;
             Assert.Equal(eng, result);
         }
 
@@ -18,7 +18,7 @@ namespace SimplesTests.SouthAfrican
         [MemberData(nameof(GetTestData))]
         public void Parse_HasAfrikaans(string full, string eng, string afr)
         {
-            var result = Tweetalig.Parse(full);
+            Tweetalig result = full;
             Assert.Equal(afr, result.Afrikaans);
         }
 
@@ -26,7 +26,7 @@ namespace SimplesTests.SouthAfrican
         [MemberData(nameof(GetTestData))]
         public void Parse_HasBoth(string full, string eng, string afr)
         {
-            var result = Tweetalig.Parse(full);
+            Tweetalig result = full;
             Assert.Equal(full, result.GetBoth());
         }
 

@@ -13,10 +13,10 @@ namespace Simples.SouthAfrican
             Afrikaans = afr;
         }
 
-        public static Tweetalig Parse(string full)
+        public static implicit operator Tweetalig(string full)
         {
             var dual = full?.Split('/', '\\', '|').Select(v => v.Trim()).ToArray() ?? new string[0];
-            var eng = dual.Any() ? dual[0] : null;
+            var eng = dual.Length > 0 ? dual[0] : null;
             var afr = dual.Length > 1 ? dual[1] : eng;
             return new Tweetalig(eng, afr);
         }

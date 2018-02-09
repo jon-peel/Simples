@@ -14,10 +14,10 @@ namespace Simples.SouthAfrican
         VehicleLicence(string registrationNumber, string type, string make, string model, string colour, DateTime expiryDate, string vehicleIdentificationNumber)
         {
             RegistrationNumber = registrationNumber;
-            Type = Tweetalig.Parse(type);
+            Type = type;
             Make = make;
             Model = model;
-            Colour = Tweetalig.Parse(colour);
+            Colour = colour;
             ExpiryDate = expiryDate;
             VehicleIdentificationNumber = vehicleIdentificationNumber;
         }
