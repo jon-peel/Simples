@@ -1,6 +1,6 @@
 ﻿namespace Simples
 {
-    public class Degree
+    public readonly struct Degree
     {
         readonly decimal value;
 

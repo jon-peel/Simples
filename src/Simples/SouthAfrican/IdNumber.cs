@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Simples.SouthAfrican
 {
-    public class IdNumber
+    public readonly struct IdNumber
     {
         readonly string literal;
 
@@ -37,16 +37,19 @@ namespace Simples.SouthAfrican
             if (month < 1 || month > 12) return null;
             var day = int.Parse(literal.Substring(4, 2));
             if (day < 1 || day > 31) return null;
-            var year = "19" + yr;
+            var date = CreateDate(2000 + int.Parse(yr), month, day);
+            if (date == null || date > DateTime.Now)
+                date = CreateDate(1900 + int.Parse(yr), month, day);
+            return date;
+        }
+
+        static DateTime? CreateDate(int year, int month, int day)
+        {
             try
             {
-                var date = new DateTime(int.Parse(year), month, day);
-                return date;
+                return new DateTime(year, month, day);
             }
-            catch (Exception)
-            {
-                return null;
-            }
+            catch (Exception) { return null; }
         }
 
         bool ValidateArray()

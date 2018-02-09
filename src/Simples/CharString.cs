@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Simples
 {
-    public class CharString : IComparable<CharString>, IComparable<string>
+    public readonly struct CharString : IComparable<CharString>, IComparable<string>
     {
         readonly string inner;
 

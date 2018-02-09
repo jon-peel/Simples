@@ -1,6 +1,6 @@
 ﻿namespace Simples
 {
-    public class Coordinate
+    public readonly struct Coordinate
     {
         public Degree Longitude { get; }
         public Degree Latitude { get; }
