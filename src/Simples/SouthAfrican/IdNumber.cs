@@ -5,30 +5,38 @@ namespace Simples.SouthAfrican
 {
     public readonly struct IdNumber
     {
-        readonly string literal;
+        private readonly string literal;
 
-        IdNumber(string literalIdNumber) => literal = literalIdNumber.Length > 13 ? literalIdNumber.Substring(0, 13) : literalIdNumber;
-        public static implicit operator IdNumber(string literal) => new IdNumber(literal);
-        public static implicit operator string(IdNumber idNumber) => idNumber.literal;
+        private IdNumber(string literalIdNumber) => literal = literalIdNumber.Length > 13 ? literalIdNumber.Substring(0, 13) : literalIdNumber;
 
         public DateTime? DateOfBirth => GetDateOfBirth();
+
         public Gender Gender => HasLength && IsNumberic && int.Parse(literal[5].ToString()) >= 5;
-        public bool SouthAfrican => HasLength && IsNumberic && int.Parse(literal[10].ToString()) == 0;
+
         public bool IsValid => Validate().valid;
 
-        bool HasLength => literal.Length == 13;
-        bool IsNumberic => ulong.TryParse(literal, out var idv);
+        public bool SouthAfrican => HasLength && IsNumberic && int.Parse(literal[10].ToString()) == 0;
 
-        (bool valid, string reason) Validate()
+        private bool HasLength => literal.Length == 13;
+
+        private bool IsNumberic => ulong.TryParse(literal, out var idv);
+
+        public static implicit operator IdNumber(string literal) => new IdNumber(literal);
+
+        public static implicit operator string(IdNumber idNumber) => idNumber.ToString();
+
+        public override string ToString() => literal;
+
+        private static DateTime? CreateDate(int year, int month, int day)
         {
-            if (!HasLength) return (false, "The length of the ID number is not correct");
-            if (!IsNumberic) return (false, "The ID number can only contain numeric digits");
-            if (DateOfBirth == null) return (false, "The date of birth is not valid");
-            if (!ValidateArray()) return (false, "ID number does not validate");
-            return (true, null);
+            try
+            {
+                return new DateTime(year, month, day);
+            }
+            catch (Exception) { return null; }
         }
 
-        DateTime? GetDateOfBirth()
+        private DateTime? GetDateOfBirth()
         {
             if (!HasLength) return null;
             if (!IsNumberic) return null;
@@ -43,16 +51,16 @@ namespace Simples.SouthAfrican
             return date;
         }
 
-        static DateTime? CreateDate(int year, int month, int day)
+        private (bool valid, string reason) Validate()
         {
-            try
-            {
-                return new DateTime(year, month, day);
-            }
-            catch (Exception) { return null; }
+            if (!HasLength) return (false, "The length of the ID number is not correct");
+            if (!IsNumberic) return (false, "The ID number can only contain numeric digits");
+            if (DateOfBirth == null) return (false, "The date of birth is not valid");
+            if (!ValidateArray()) return (false, "ID number does not validate");
+            return (true, null);
         }
 
-        bool ValidateArray()
+        private bool ValidateArray()
         {
             var numbers = literal.Select(c => int.Parse(c.ToString()));
             Func<int, int, bool> oddPredecate = (n, i) => i % 2 == 0;

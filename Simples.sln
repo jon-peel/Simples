@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28531.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{26CB6DEE-20E6-4D07-86B2-B454B4942040}"
 EndProject
@@ -16,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9891E606-B0B4-4D12-899F-114D95A16F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplesTests", "tests\SimplesTests\SimplesTests.csproj", "{C3BB7635-D83B-489F-9CF7-F9A02787F0A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplesTests", "tests\SimplesTests\SimplesTests.csproj", "{C3BB7635-D83B-489F-9CF7-F9A02787F0A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplesCli", "SimplesCli\SimplesCli.csproj", "{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{C3BB7635-D83B-489F-9CF7-F9A02787F0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3BB7635-D83B-489F-9CF7-F9A02787F0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3BB7635-D83B-489F-9CF7-F9A02787F0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2B9226AB-1996-4004-9E81-7DB0441A310F} = {26CB6DEE-20E6-4D07-86B2-B454B4942040}
 		{C3BB7635-D83B-489F-9CF7-F9A02787F0A9} = {9891E606-B0B4-4D12-899F-114D95A16F3E}
+		{89ED3ADD-5C17-40CA-ABF2-8D9DEBABFAB3} = {9891E606-B0B4-4D12-899F-114D95A16F3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5C71558C-5301-4CB5-A583-EF3E23EA7D09}
