@@ -37,9 +37,10 @@ sYU+aRX4RmoF
                 var decrypted = EncryptValue(data, o.Exponent, o.Modulus, 128);
                 // string base64 = Convert.ToBase64String(decrypted);
                 var ascii = Encoding.ASCII.GetString(decrypted).Split('?');
-                Surname = ascii[5];
-                Initials = ascii[6];
-                IdNumber = ascii[13].Substring(0, 13);
+                var i = Array.IndexOf(ascii, string.Empty) + 2;
+                Surname = ascii[i];
+                Initials = ascii[i + 1];
+                IdNumber = ascii[i + 8].Substring(0, 13);
                 // Console.WriteLine("As base64: " + base64);
                 Console.WriteLine("As ASCII: " + ascii);
                 // }
