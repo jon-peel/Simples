@@ -69,11 +69,11 @@ namespace SimplesTests
         }
 
         [Theory]
-        [InlineData(012.111000, "12\u00B0 6\u2032 39,60\u2033")]
-        [InlineData(045.123877, "45\u00B0 7\u2032 25,96\u2033")]
-        [InlineData(099.876544, "99\u00B0 52\u2032 35,56\u2033")]
-        [InlineData(100.123832, "100\u00B0 7\u2032 25,80\u2033")]
-        [InlineData(180.445522, "180\u00B0 26\u2032 43,88\u2033")]
+        [InlineData(012.111000, "12\u00B0 6\u2032 39.60\u2033")]
+        [InlineData(045.123877, "45\u00B0 7\u2032 25.96\u2033")]
+        [InlineData(099.876544, "99\u00B0 52\u2032 35.56\u2033")]
+        [InlineData(100.123832, "100\u00B0 7\u2032 25.80\u2033")]
+        [InlineData(180.445522, "180\u00B0 26\u2032 43.88\u2033")]
         public void Degrees_String(decimal value, string expectedString)
         {
             Degree deg = value;
