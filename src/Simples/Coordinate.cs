@@ -5,7 +5,13 @@
         public Degree Longitude { get; }
         public Degree Latitude { get; }
 
-        Coordinate(Degree longitude, Degree latitude)
+        public Coordinate(decimal longitude, decimal latitude)
+        {
+            Latitude = new Degree(latitude);
+            Longitude = new Degree(longitude);
+        }
+
+        public Coordinate(Degree longitude, Degree latitude)
         {
             Latitude = latitude;
             Longitude = longitude;

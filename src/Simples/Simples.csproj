@@ -6,19 +6,19 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <Authors>Jonathan Peel</Authors>
     <Company />
     <Description>A .Net library with simple, hopefully useful, helpers.</Description>
-    <Copyright>2018 Jonathan Peel</Copyright>
+    <Copyright>2019 Jonathan Peel</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/Thorocaine/Simples/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Thorocaine/Simples</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Thorocaine/Simples</RepositoryUrl>
     <PackageTags>.net,SouthAfrica,ID Number</PackageTags>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>latest</LangVersion>

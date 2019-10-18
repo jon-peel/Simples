@@ -4,13 +4,13 @@
     {
         readonly decimal value;
 
-        Degree(decimal from)
+        public Degree(decimal from)
         {
             value = from.Abs();
             Negative = from < 0;
         }
 
-        Degree(double from) : this((decimal)from)
+        public Degree(double from) : this((decimal)from)
         {
         }
 
